@@ -1,13 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Http\Request;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\loginController;
 
-Route::view('/', 'home')->name('home');
-Route::view('/about', 'about')->name('about');
-Route::view('/services', 'services')->name('services');
-Route::view('/blog', 'blog')->name('blog');
-Route::view('/contact', 'contact')->name('contact');
-Route::view('/dashboard', 'dashboard')->name('dashboard');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('/product', [ProductController::class, 'product']);
 
