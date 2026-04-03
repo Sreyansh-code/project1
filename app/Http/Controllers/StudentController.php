@@ -31,4 +31,15 @@ class StudentController extends Controller
     public function course($course="Not Selected"){
         return view ('course', ['course'=>$course]);
     }
+
+    public function details(){
+        $studentDetails = [
+            ['id'=>1, 'name'=>'ABC', 'course'=>'BTECH'],
+            ['id'=>2, 'name'=>'XYZ', 'course'=>'MCA'],
+            ['id'=>3, 'name'=>'PQR', 'course'=>'BBA'],
+            ['id'=>4, 'name'=>'LMN', 'course'=>'BCOM'],
+            ['id'=>5, 'name'=>'STU', 'course'=>'BSC'],
+        ];
+        return view('student', ['students'=>$studentDetails]);
+    }
 }

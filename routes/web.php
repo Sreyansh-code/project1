@@ -180,3 +180,55 @@ Route::get('/', function () {
 // Route::get('/home', function() {
 //     return view('home');
 // });
+
+
+// Route::get('/student-details', [StudentController::class, 'details']);
+
+
+// redirect routes -> we need this for named routes
+
+// Route::get('/test', function(){
+//     return 'this is my test route';
+// })->name('A');
+
+// Route::get('/login', function(){
+//     return redirect()->route('A');
+// });
+
+
+//secure routes
+// Route::get('/secure', function(){
+//     return 'This is a secure route';
+// })->middleware('auth');
+
+
+// Regular expression constraints on route parameters
+// Route::get('/user/{id}/{name}', function($id, $name){
+//     return 'User ID: '.$id. ' and name: '.$name;
+// })->where('id', '[0-9]+')
+// ->where('name', '[A-Za-z]+');
+
+
+
+// Route::pattern('id', '[0-9]+');
+// Route::pattern('name', '[A-Za-z]+');
+
+
+// Route::middleware('auth')->group(function(){
+//     Route::get('/test', function(){
+//         return 'Test page';
+//     });
+//     Route::get('/test2', function(){
+//         return 'Test page2';
+//     });
+// });
+
+Route::controller(StudentController::class)->group(function(){
+    Route::get('/students', 'students');
+    Route::get('/student/{name}', 'student');
+});
+
+Route::prefix('admin')->controller(StudentController::class)->group(function(){
+    Route::get('/students', 'students');
+    Route::get('/student/{name}', 'student');
+});

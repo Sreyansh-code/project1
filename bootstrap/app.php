@@ -12,8 +12,12 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         // $middleware->append(\App\Http\Middleware\checkCourse::class);
+        // $middleware->alias([
+        //     'check.course' => \App\Http\Middleware\checkCourse::class
+        // ]);
         $middleware->alias([
-            'check.course' => \App\Http\Middleware\checkCourse::class]);
+            'auth' => \App\Http\Middleware\auth::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
