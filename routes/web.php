@@ -11,9 +11,10 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\loginController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/product', [ProductController::class, 'product']);
 
@@ -235,6 +236,24 @@ Route::get('/', function () {
 
 
 
-Route::get('/dashboard', function(){
-    return 'This is my dashboard';
+// Route::get('/dashboard', function(){
+//     return 'This is my dashboard';
+// })->middleware('auth');
+
+// require
+
+
+
+// Route::get('/dashboard', function(Request $request){
+//     return $request->path();
+// });
+
+
+Route::domain('admin.mysite.com')->group(function(){
+    Route::get('/', function(){
+        return 'Welcome admin';
+    });
+    Route::get('/dashboard', function(){
+        return 'This is admin dashboard';
+    });
 });
