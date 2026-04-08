@@ -223,12 +223,18 @@ Route::get('/', function () {
 //     });
 // });
 
-Route::controller(StudentController::class)->group(function(){
-    Route::get('/students', 'students');
-    Route::get('/student/{name}', 'student');
-});
+// Route::controller(StudentController::class)->group(function(){
+//     Route::get('/students', 'students');
+//     Route::get('/student/{name}', 'student');
+// });
 
-Route::prefix('admin')->controller(StudentController::class)->group(function(){
-    Route::get('/students', 'students');
-    Route::get('/student/{name}', 'student');
+// Route::prefix('admin')->controller(StudentController::class)->group(function(){
+//     Route::get('/students', 'students');
+//     Route::get('/student/{name}', 'student');
+// });
+
+
+
+Route::get('/dashboard', function(){
+    return 'This is my dashboard';
 });
