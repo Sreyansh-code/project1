@@ -12,9 +12,9 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\loginController;
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('/product', [ProductController::class, 'product']);
 
@@ -249,11 +249,21 @@ use App\Http\Controllers\loginController;
 // });
 
 
-Route::domain('admin.mysite.com')->group(function(){
-    Route::get('/', function(){
-        return 'Welcome admin';
-    });
-    Route::get('/dashboard', function(){
-        return 'This is admin dashboard';
-    });
-});
+// Route::domain('admin.mysite.com')->group(function(){
+//     Route::get('/', function(){
+//         return 'Welcome admin';
+//     });
+//     Route::get('/dashboard', function(){
+//         return 'This is admin dashboard';
+//     });
+// });
+
+
+// Route::get('/dashboard', function(){
+//     if(request()->is(('/dashboard'))){
+//         return 'This is my dashboard';
+//     }
+//     else{
+//         return 'Not found';
+//     }
+// });
