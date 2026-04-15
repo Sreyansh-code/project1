@@ -10,7 +10,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\loginController;
-
+use App\Http\Middleware\checkAdmin;
 
 Route::get('/', function () {
     return view('welcome');
@@ -111,6 +111,10 @@ Route::get('/', function () {
 // Route::get('/read-cookie1', function(){
 //     $name = Cookie::get('name');
 //     return 'Cookie Value: '.$name;
+// });
+
+// Route::get('/delete-cookie', function(){
+//     return response('Deleted')->withoutCookie('name');
 // });
 
 
@@ -240,7 +244,7 @@ Route::get('/', function () {
 //     return 'This is my dashboard';
 // })->middleware('auth');
 
-// require
+// require __DIR__.'/auth.php'
 
 
 
@@ -267,3 +271,27 @@ Route::get('/', function () {
 //         return 'Not found';
 //     }
 // });
+
+Route::get('/dashboard/{id}', function($id){
+    return 'this is sample route';
+})->name('AB');
+
+Route::get('/details', [StudentController::class, 'details']);
+
+Route::get('/login', function(){
+    // return to_route('AB');
+    // return url('/dashboard');
+    // return url('/home', ['id'=> 5]);
+    // return route('AB', ['id' => 5]);
+    // return action([StudentController::class, 'details']);
+    // return request()->input('name', 'Sreyansh');
+    return request()->has('name');
+});
+
+// how to get cookies asked in CA 
+// three methods to register middleware
+// with, compact and array -> all the methods of passing data
+
+Route::get('/auth', function(){
+    return 'this is my admin dashboard';
+})->middleware(checkAdmin::class);
