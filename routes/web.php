@@ -272,26 +272,26 @@ Route::get('/', function () {
 //     }
 // });
 
-Route::get('/dashboard/{id}', function($id){
-    return 'this is sample route';
-})->name('AB');
+// Route::get('/dashboard/{id}', function($id){
+//     return 'this is sample route';
+// })->name('AB');
 
-Route::get('/details', [StudentController::class, 'details']);
+// Route::get('/details', [StudentController::class, 'details']);
 
-Route::get('/login', function(){
+// Route::get('/login', function(){
     // return to_route('AB');
     // return url('/dashboard');
     // return url('/home', ['id'=> 5]);
     // return route('AB', ['id' => 5]);
     // return action([StudentController::class, 'details']);
     // return request()->input('name', 'Sreyansh');
-    return request()->has('name');
-});
+    // return request()->has('name');
+// });
 
 // how to get cookies asked in CA 
 // three methods to register middleware
 // with, compact and array -> all the methods of passing data
 
-Route::get('/auth', function(){
-    return 'this is my admin dashboard';
-})->middleware(checkAdmin::class);
+// Route::get('/auth', function(){
+//     return 'this is my admin dashboard';
+// })->middleware(checkAdmin::class);

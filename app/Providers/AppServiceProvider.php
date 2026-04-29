@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::share('sitename', 'My Laravel Website');
+        // View::share('sitename', 'My Laravel Website');
+        view()->share('sitename', 'My Laravel Website');
     }
 }
