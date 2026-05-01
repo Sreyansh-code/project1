@@ -295,3 +295,28 @@ Route::get('/', function () {
 // Route::get('/auth', function(){
 //     return 'this is my admin dashboard';
 // })->middleware(checkAdmin::class);
+
+
+// Route::get('/ye', function(Request $request){
+    // return $request->session()->put('name', 'Shreyansh');
+    // return $request->session()->put(['countries' => 'A', 'B', 'C'], ['company-name', []]);
+//     return[
+//         'put'=>$request->session()->put('name', 'Shrey'),
+//         'put-multiple'=>$request->session()->put(['countries' => 'A', 'B', 'C'], 
+//         ['company-name', []]),
+//         'push'=>$request->session()->push('company-name', 'KFC'),
+//         'session'=>session(['currency'=>'Rs'])
+//     ];
+// });
+
+
+// Route::get('/get-session', function(Request $request){
+//     return[
+//         'get'=>$request->session()->get('company-name'),
+//         'domain-using-session'=>session('domain'),
+//         'defauly-value'=>$request->session()->get('name', 'Shrey'),
+//         'all'=>$request->session()->all(),
+//         'has'=>$request->session()->has('countries')? 'True':'False',
+//         'exists'=>$request->session()->exists('section')?'True':'False'
+//     ];
+// });
