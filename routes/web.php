@@ -11,6 +11,8 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\loginController;
 use App\Http\Middleware\checkAdmin;
+use App\Http\Middleware\Setlocale;
+use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
     return view('welcome');
@@ -320,3 +322,18 @@ Route::get('/', function () {
 //         'exists'=>$request->session()->exists('section')?'True':'False'
 //     ];
 // });
+
+// Route::get('/lang', function(Request $request){
+//     return view('lang');
+// });
+
+// for doing it dynamically
+
+Route::get('/lang/{locale}', function($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
+
+Route::get('/', function(){
+    return view('language');
+});

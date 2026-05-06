@@ -11,13 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->web(append: [\App\Http\Middleware\Setlocale::class]);
         // $middleware->append(\App\Http\Middleware\checkCourse::class);
         // $middleware->alias([
         //     'check.course' => \App\Http\Middleware\checkCourse::class
         // ]);
-        $middleware->alias([
-            'auth' => \App\Http\Middleware\auth::class
-        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

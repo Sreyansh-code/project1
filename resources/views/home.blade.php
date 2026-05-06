@@ -1,6 +1,6 @@
 <!-- <h1>Welcome to home page</h1> -->
 
-@extends('layout')
+<!-- @extends('layout')
 @section('content')
     <h1>Welcome to home page</h1>   
-@endsection
+@endsection -->
