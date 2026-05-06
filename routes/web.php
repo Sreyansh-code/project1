@@ -9,6 +9,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\loginController;
 use App\Http\Middleware\checkAdmin;
 use App\Http\Middleware\Setlocale;
@@ -329,11 +330,31 @@ Route::get('/', function () {
 
 // for doing it dynamically
 
-Route::get('/lang/{locale}', function($locale){
-    Session::put('locale', $locale);
-    return redirect()->back();
-});
+// Route::get('/lang/{locale}', function($locale){
+//     Session::put('locale', $locale);
+//     return redirect()->back();
+// });
 
-Route::get('/', function(){
-    return view('language');
-});
+// Route::get('/', function(){
+//     return view('language');
+// });
+
+
+// Route::get('/home/{locale}', function($locale){
+//     Session::put('locale', $locale);
+//     return redirect('language');
+// });
+// Route::get('/about/{locale}', function($locale){
+//     Session::put('locale', $locale);
+//     return redirect('language');
+// });
+// Route::view('/language', 'home');
+
+
+
+
+
+// working with forms
+
+Route::view('/language', 'form');
+Route::post('/submit-form', [FormController::class, 'submitForm']);
